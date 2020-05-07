@@ -43,7 +43,7 @@ public class CategoriaController {
 		service.salvar(categoria);
 		attr.addFlashAttribute("success", "Categoria inserida com sucesso!");
 
-		return "redirect /categorias/listar";
+		return "redirect:/categorias/listar";
 
 	}
 
@@ -64,7 +64,7 @@ public class CategoriaController {
 		service.editar(categoria);
 		attr.addFlashAttribute("success", "Categoria alterada com sucesso!");
 
-		return "redirect /categorias/listar";
+		return "redirect:/categorias/listar";
 	}
 
 	@GetMapping("/excluir/{id}")
@@ -73,7 +73,7 @@ public class CategoriaController {
 		service.excluir(id);
 		attr.addFlashAttribute("success", "Categoria excluída com sucesso!");
 
-		return "redirect /categorias/listar";
+		return "redirect:/categorias/listar";
 	}
 
 }

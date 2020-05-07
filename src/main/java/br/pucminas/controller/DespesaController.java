@@ -51,7 +51,7 @@ public class DespesaController {
 			service.salvar(despesa);
 			attr.addFlashAttribute("success", "Despesa inserida com sucesso!");
 
-			return "redirect /despesas/listar";
+			return "redirect:/despesas/listar";
 
 		}
 
@@ -72,7 +72,7 @@ public class DespesaController {
 			service.editar(despesa);
 			attr.addFlashAttribute("success", "Despesa alterada com sucesso!");
 
-			return "redirect /despesas/listar";
+			return "redirect:/despesas/listar";
 		}
 
 		@GetMapping("/excluir/{id}")
@@ -81,7 +81,7 @@ public class DespesaController {
 			service.excluir(id);
 			attr.addFlashAttribute("success", "Despesa excluída com sucesso!");
 
-			return "redirect /despesas/listar";
+			return "redirect:/despesas/listar";
 		}
 		
 		@ModelAttribute ("categorias")
