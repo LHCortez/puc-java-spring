@@ -1,4 +1,4 @@
-package br.pucminas.controller;
+	package br.pucminas.controller;
 
 import java.util.List;
 
@@ -33,6 +33,12 @@ public class DespesaController {
 		@GetMapping("/listar")
 		public String listar(ModelMap model) {
 			model.addAttribute("despesas", service.buscarTodos());
+			return "despesa/lista";
+		}
+		
+		@GetMapping("/categoria/{id}")
+		public String categoria(@PathVariable("id") Long id,ModelMap model) {
+			model.addAttribute("despesas", service.buscarPorCategoria(id));
 			return "despesa/lista";
 		}
 
@@ -88,6 +94,7 @@ public class DespesaController {
 		public List <Categoria> getCategorias (){
 			return categoriaService.buscarTodos();	
 		}
-
+		
+		
 	}
 
